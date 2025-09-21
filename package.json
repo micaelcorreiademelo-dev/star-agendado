@@ -1,0 +1,53 @@
+{
+  "name": "star-agendado",
+  "version": "0.1.0",
+  "description": "SaaS de agendamentos - StarAgendado",
+  "private": true,
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.1",
+  "scripts": {
+    "build": "pnpm gen:types && pnpm -r build",
+    "dev": "pnpm -r --parallel dev",
+    "lint": "pnpm -r lint",
+    "lint:fix": "pnpm -r lint:fix",
+    "type-check": "pnpm -r type-check",
+    "test": "pnpm -r test",
+    "clean": "pnpm -r clean",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md,yml,yaml}\"",
+    "gen:types": "node ./scripts/gen-supabase-types.js",
+    "gen:types:bash": "bash ./scripts/gen-supabase-types.sh",
+    "gen:types:ps1": "powershell -ExecutionPolicy Bypass -File ./scripts/gen-supabase-types.ps1",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@jest/globals": "^30.1.2",
+    "@types/node": "^20.11.5",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.2.32",
+    "eslint-config-prettier": "^9.1.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.2.4",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "saas",
+    "agendamento",
+    "scheduling",
+    "monorepo",
+    "nextjs",
+    "typescript"
+  ],
+  "author": "StarAgendado Team",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/ssr": "^0.7.0",
+    "@supabase/supabase-js": "^2.57.4"
+  }
+}
